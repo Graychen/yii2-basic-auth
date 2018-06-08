@@ -1,0 +1,31 @@
+{
+    "name": "graychen/yii2-basic-auth",
+    "description": "basic auth for yii",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^7.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "陈家辉",
+            "email": "chenjiahui@haolianluo.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+         "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+          "graychen\\yii2\\basic\\auth\\": "src",
+          "graychen\\yii2\\basic\\auth\\tests\\": "tests"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
