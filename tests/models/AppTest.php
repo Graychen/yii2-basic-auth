@@ -7,7 +7,7 @@ use graychen\yii2\basic\auth\models\App;
 
 class AppTest extends TestCase
 {
-     public function testAttributeLaels()
+    public function testAttributeLaels()
     {
         $model = new App();
         $this->assertArrayHasKey('id', $model->attributeLabels());

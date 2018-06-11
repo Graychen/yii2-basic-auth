@@ -173,4 +173,3 @@ class App extends ActiveRecord implements IdentityInterface
         ];
     }
 }
-
