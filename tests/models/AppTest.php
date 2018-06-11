@@ -28,13 +28,6 @@ class AppTest extends TestCase
         $this->assertArrayHasKey('1', App::getStatusList());
     }
 
-    public function testGetNum()
-    {
-        $model = new App();
-        $num=$model->getNum(1);
-        $this->assertTrue(is_numeric($num));
-    }
-
     public function testRule()
     {
         $model = new App();
@@ -48,7 +41,7 @@ class AppTest extends TestCase
     public function testGetId()
     {
         $model = new App();
-        codecept_debug($model->getId());
+        $this->assertEmpty($model->getId());
     }
 
 }

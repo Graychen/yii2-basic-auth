@@ -14,7 +14,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-         "yiisoft/yii2": "*"
+         "yiisoft/yii2": "*",
+        "ramsey/uuid": "^3.7"
     },
     "autoload": {
         "psr-4": {
