@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value'=>function ($model) {
                     if ($model->status==0) {
                         return "开发状态";
-                    }elseif ($model->status==1) {
+                    } elseif ($model->status==1) {
                         return "部署状态";
                     }
                 }

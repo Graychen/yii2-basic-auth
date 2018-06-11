@@ -43,5 +43,4 @@ class AppTest extends TestCase
         $model = new App();
         $this->assertEmpty($model->getId());
     }
-
 }
