@@ -1,5 +1,4 @@
-# yii2-basic-auth
-[![Latest Stable Version](https://poser.pugx.org/graychen/yii2-basic-auth/version)](https://packagist.org/packages/graychen/yii2-basic-auth)
+# yii2-basic-auth [![Latest Stable Version](https://poser.pugx.org/graychen/yii2-basic-auth/version)](https://packagist.org/packages/graychen/yii2-basic-auth)
 [![Total Downloads](https://poser.pugx.org/graychen/yii2-basic-auth/downloads)](https://packagist.org/packages/graychen/yii2-basic-auth)
 [![Build Status](https://travis-ci.org/Graychen/yii2-basic-auth.svg?branch=master)](https://travis-ci.org/Graychen/yii2-basic-auth)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Graychen/yii2-basic-auth/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Graychen/yii2-basic-auth/?branch=master)
@@ -7,10 +6,11 @@
 [![Build Status](https://scrutinizer-ci.com/g/Graychen/yii2-basic-auth/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Graychen/yii2-basic-auth/build-status/master)
 [![StyleCI](https://styleci.io/repos/109097207/shield?branch=master)](https://styleci.io/repos/109097207)
 
-This is a background for yii-queue, there are queue statistics, temporary support redis driver
+This is a basic module for app registration. It registers applications through the background and verifies the API in the way of basic authentication
+(这是一个app注册的基本模块，通过后台注册应用，以基本认证的方式对api进行验证)
 # Migrate database
 
-## To add a lookup table to your database, following is the sql for lookup:
+## To add a app table to your database, following is the sql for app:
 
 ``` mysql
 CREATE TABLE IF NOT EXISTS `tb_app` (
@@ -43,7 +43,7 @@ yii migrate/up --migrationPath=@graychen/yii2/basic/auth
 ```
 ### Config Module in components part
 ``` php
-'queue' => [
+'auth' => [
             'class' => 'graychen\yii2\basic\auth\Module',
 ]
 ```
