@@ -37,10 +37,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'updated_at:datetime',
             [
                 'attribute'=>'status',
-                'value'=>function($model){
-                    if($model->status==0){
+                'value'=>function ($model) {
+                    if ($model->status==0) {
                         return "开发状态";
-                    }elseif($model->status==1){
+                    } elseif ($model->status==1) {
                         return "部署状态";
                     }
                 }

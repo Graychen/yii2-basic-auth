@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'num',
                 'format' => 'html',
-                'value' => function($model) {
+                'value' => function ($model) {
                     return $model->getNum($model->id);
                 }
             ],
