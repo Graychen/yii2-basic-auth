@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 
 class TestCase extends BaseTestCase
 {
-     protected function setUp()
+    protected function setUp()
     {
         parent::setUp();
         $this->mockWebApplication();
