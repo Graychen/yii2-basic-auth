@@ -27,4 +27,3 @@ class AppQuery extends \yii\db\ActiveQuery
         return parent::one($db);
     }
 }
-

@@ -2,6 +2,7 @@
 namespace graychen\yii2\basic\auth;
 
 use yii\base\Module as BaseModule;
+
 /**
  * portal module definition class
  */
