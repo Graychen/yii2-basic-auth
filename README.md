@@ -48,7 +48,7 @@ yii migrate/up --migrationPath=@graychen/yii2/basic/auth
 ]
 ```
 ## View
-### after that,you can website `https://localhost/admin/queue/default`
+### after that,you can website `https://localhost/admin/app`
 
 ## ChangeLog
 [changelog](https://github.com/Graychen/yii2-basic-auth/blob/master/CHANGELOG.md)
