@@ -3,8 +3,6 @@
 namespace graychen\yii2\basic\auth\models;
 
 use yii;
-use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use yii\base\NotSupportedException;
@@ -173,11 +171,6 @@ class App extends ActiveRecord implements IdentityInterface
             [0=>'开发状态'],
             [1=>'部署状态']
         ];
-    }
-
-    public function getNum($id)
-    {
-         return AppLog::find()->where(['app_id'=>$id])->count();
     }
 }
 

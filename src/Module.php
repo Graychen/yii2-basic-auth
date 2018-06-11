@@ -1,10 +1,6 @@
 <?php
 namespace graychen\yii2\basic\auth;
 
-use yii;
-<?php
-namespace graychen\yii2\queue\backend;
-use yii;
 use yii\base\Module as BaseModule;
 /**
  * portal module definition class

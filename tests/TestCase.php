@@ -46,7 +46,7 @@ class TestCase extends BaseTestCase
             ],
             'modules' => [
                 'basic-auth' => [
-                    'class' => 'graychen\yii2\jd\deposit\Module',
+                    'class' => 'graychen\yii2\basic\auth\Module',
                     'controllerNamespace' => 'graychen\yii2\basic\auth'
                 ]
             ]
@@ -76,21 +76,20 @@ class TestCase extends BaseTestCase
     }
     protected function createTestDbData()
     {
-        //Yii::$app->runAction('/migrate', ['migrationPath' => '@migrate']);
         $db = Yii::$app->getDb();
         try {
             $db->createCommand()->createTable('tb_app', [
                 'id' => 'pk',
-                'app_name' => 'App名称',
-                'app_description' => 'App简介',
-                'app_key' => 'App Key',
-                'app_secret' => 'App Secret',
-                'created_at' => '创建时间',
-                'updated_at' => '更新时间',
-                'status' => '状态',
+                'app_name' => 'string(32) not null',
+                'app_description' => 'string(125) not null',
+                'app_key' => 'char(40) not null',
+                'app_secret' => 'char(36) not null',
+                'created_at' => 'integer not null',
+                'updated_at' => 'integer not null',
+                'status' => 'integer not null',
             ])->execute();
         } catch (Exception $e) {
-            return;
+            return ;
         }
     }
 }
