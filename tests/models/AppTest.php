@@ -2,7 +2,7 @@
 
 namespace tests\models;
 
-use graychen\yii2\basic\auth\tests\TestCase;
+use tests\TestCase;
 use graychen\yii2\basic\auth\models\App;
 
 class AppTest extends TestCase
