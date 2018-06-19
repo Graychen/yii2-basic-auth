@@ -1,5 +1,5 @@
 <?php
-namespace graychen\yii2\basic\auth\tests;
+namespace tests;
 
 use Yii;
 use PHPUnit\Framework\TestCase as BaseTestCase;
