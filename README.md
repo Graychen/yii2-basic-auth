@@ -14,6 +14,7 @@ This is a basic module for app registration. It registers applications through t
 ### Config Migration
 
 ```php
+
 'controllerMap' => [
     'migrate' => [
         'class' => 'yii\console\controllers\MigrateController',
@@ -33,9 +34,10 @@ $ yii migrate/up
 ## Config backend module in components part
 
 ``` php
+
 'auth' => [
     'class' => 'graychen\yii2\basic\auth\Module',
-    ]
+]
 ```
 
 after that,you can website `https://localhost/admin/app`
@@ -62,7 +64,3 @@ use graychen\yii2\basic\auth\filters\HttpBasicAuth;
         ];
     }
 ```
-
-## ChangeLog
-
-[changelog](https://github.com/Graychen/yii2-basic-auth/blob/master/CHANGELOG.md)
