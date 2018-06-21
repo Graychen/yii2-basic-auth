@@ -12,7 +12,10 @@ class m180503_090313_create_app_table extends Migration
      */
     public function up()
     {
-        //app
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+        }
         $this->createTable('{{%app}}', [
             'id' => $this->primaryKey(),
             'app_name' => $this->string(32)->notNull()->comment('App名称'),
@@ -22,7 +25,7 @@ class m180503_090313_create_app_table extends Migration
             'created_at' => $this->integer()->notNull()->comment('创建时间'),
             'updated_at' => $this->integer()->notNull()->comment('更新时间'),
             'status' => $this->boolean()->notNull()->defaultValue(1)->comment('状态'),
-        ], 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB COMMENT="App表"');
+        ], $tableOptions);
     }
 
     /**

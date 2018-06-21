@@ -88,8 +88,17 @@ class TestCase extends BaseTestCase
                 'updated_at' => 'integer not null',
                 'status' => 'integer not null',
             ])->execute();
+            $db->createCommand()->insert('tb_app', [
+                'app_name' => 'test-app',
+                'app_description' => 'test-account',
+                'app_key' => 'username',
+                'app_secret' => 'password',
+                'created_at' => time(),
+                'updated_at' => time(),
+                'status' => 1,
+            ])->execute();
         } catch (Exception $e) {
-            return ;
+            return;
         }
     }
 }
