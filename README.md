@@ -15,22 +15,22 @@ This is a basic module for app registration. It registers applications through t
 
 ```php
 'controllerMap' => [
-        'migrate' => [
-            'class' => 'yii\console\controllers\MigrateController',
-            'migrationPath' => [
-                '@graychen/yii2/basic/auth/migrations'
-            ],
+    'migrate' => [
+        'class' => 'yii\console\controllers\MigrateController',
+        'migrationPath' => [
+            '@graychen/yii2/basic/auth/migrations'
         ],
     ],
+],
 ```
 
 ## Run Migration
 
 ```bash
-yii migrate/up
+$ yii migrate/up
 ```
 
-## Config Module in components part
+## Config backend module in components part
 
 ``` php
 'auth' => [
@@ -38,9 +38,30 @@ yii migrate/up
     ]
 ```
 
-## Backend
+after that,you can website `https://localhost/admin/app`
 
-### after that,you can website `https://localhost/admin/app`
+## Add behaviors in your Controller
+
+```php
+
+use graychen\yii2\basic\auth\models\App;
+use graychen\yii2\basic\auth\filters\HttpBasicAuth;
+
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => HttpBasicAuth::className(),
+                'auth' => function ($username, $password) {
+                    return App::findOne([
+                        'app_key' => $username,
+                        'app_secret' => $password,
+                    ]);
+                }
+            ]
+        ];
+    }
+```
 
 ## ChangeLog
 
