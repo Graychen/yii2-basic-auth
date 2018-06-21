@@ -53,6 +53,6 @@ class AppTest extends TestCase
     public function testFindAll()
     {
         $apps = App::find()->all();
-        $this->assertInstanceOf('\graychen\yii2\basic\auth\models\App', $app[0]);
+        $this->assertInstanceOf('\graychen\yii2\basic\auth\models\App', $apps[0]);
     }
 }
