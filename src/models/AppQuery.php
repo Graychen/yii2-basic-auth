@@ -1,6 +1,6 @@
 <?php
 
-namespace graychen\yii2\basic\auth\models\queries;
+namespace graychen\yii2\basic\auth\models;
 
 /**
  * This is the ActiveQuery class for [[App]].

@@ -19,8 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-          "graychen\\yii2\\basic\\auth\\": "src",
-          "graychen\\yii2\\basic\\auth\\tests\\": "tests"
+          "graychen\\yii2\\basic\\auth\\": "src"
         }
     },
     "repositories": [

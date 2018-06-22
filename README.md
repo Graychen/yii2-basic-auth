@@ -8,49 +8,59 @@
 
 This is a basic module for app registration. It registers applications through the background and verifies the API in the way of basic authentication
 (这是一个app注册的基本模块，通过后台注册应用，以基本认证的方式对api进行验证)
-# Migrate database
 
-## To add a app table to your database, following is the sql for app:
-
-``` mysql
-CREATE TABLE IF NOT EXISTS `tb_app` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `app_name` string(32) DEFAULT NULL,
-  `app_description` string(125) DEFAULT NULL,
-  `app_key` char(36),
-  `app_secret` char(32),
-  `status` boolean NOT NULL DEFAULT '1',
-  `created_at` int(11) DEFAULT NULL,
-  `updated_at` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-) ENGINE=InnoDB  DEFAULT CHARSET=UTF8 AUTO_INCREMENT=1 ;
-```
-## Or else you can use yii migration
-```
-yii migrate/up --migrationPath=@graychen/yii2/basic/auth
-```
 ## Usage
-### Config -> main.php
-```
+
+### Config Migration
+
+```php
+
 'controllerMap' => [
-        'migrate' => [
-            'class' => 'yii\console\controllers\MigrateController',
-            'migrationPath' => [
-                '@graychen/yii2/basic/auth/migrations'
-            ],
+    'migrate' => [
+        'class' => 'yii\console\controllers\MigrateController',
+        'migrationPath' => [
+            '@graychen/yii2/basic/auth/migrations'
         ],
     ],
+],
 ```
-### Config Module in components part
+
+## Run Migration
+
+```bash
+$ yii migrate/up
+```
+
+## Config backend module in components part
+
 ``` php
+
 'auth' => [
-            'class' => 'graychen\yii2\basic\auth\Module',
+    'class' => 'graychen\yii2\basic\auth\Module',
 ]
 ```
-## View
-### after that,you can website `https://localhost/admin/app`
 
-## ChangeLog
-[changelog](https://github.com/Graychen/yii2-basic-auth/blob/master/CHANGELOG.md)
+after that,you can website `https://localhost/admin/app`
 
+## Add behaviors in your Controller
 
+```php
+
+use graychen\yii2\basic\auth\models\App;
+use graychen\yii2\basic\auth\filters\HttpBasicAuth;
+
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => HttpBasicAuth::className(),
+                'auth' => function ($username, $password) {
+                    return App::findOne([
+                        'app_key' => $username,
+                        'app_secret' => $password,
+                    ]);
+                }
+            ]
+        ];
+    }
+```
